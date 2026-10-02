@@ -25,6 +25,16 @@ app.use('/applications',  applicationRoutes);
 app.use('/messages',      messageRoutes);
 app.use('/notifications', notificationRoutes);
 
+// ── API Root ───────────────────────────────────────────────────────────────────
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'FreelancerConnect API',
+    message: 'API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // ── Health Check ──────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
