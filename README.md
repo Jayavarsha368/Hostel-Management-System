@@ -93,7 +93,15 @@ USB forwarding and local MongoDB are development-only. For public use, deploy th
 .\gradlew.bat assembleRelease -PAPI_BASE_URL=https://YOUR-API.onrender.com/
 ```
 
-For Google Sign-In, also pass `-PGOOGLE_WEB_CLIENT_ID=YOUR_WEB_CLIENT_ID` and set the same ID in Render. The APK is at `app/build/outputs/apk/release/app-release.apk`. Direct distribution requires each user to allow APK installation; Google Play distribution additionally requires a signing key and Play Console setup. Release builds do not log HTTP bodies.
+For Google Sign-In, also pass `-PGOOGLE_WEB_CLIENT_ID=YOUR_WEB_CLIENT_ID` and set the same ID in Render. With signing configured, the APK is at `app/build/outputs/apk/release/app-release.apk`; without it, the output is `app-release-unsigned.apk` and cannot be installed. Direct distribution requires each user to allow APK installation; Google Play distribution also requires a Play Console listing. Release builds do not log HTTP bodies.
+
+To sign a directly distributed release, create a private keystore once and keep a secure backup:
+
+```powershell
+keytool -genkeypair -v -keystore freelancerconnect-release.jks -alias freelancerconnect -keyalg RSA -keysize 2048 -validity 10000
+```
+
+Configure `ANDROID_KEYSTORE_PATH`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` as local environment variables before building. Never commit the keystore or passwords.
 
 ---
 

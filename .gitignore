@@ -11,3 +11,5 @@
 **/.gradle/
 *.iml
 *.log
+*.jks
+*.keystore
