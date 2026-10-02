@@ -8,9 +8,10 @@ let missingCredentialsWarningLogged = false;
 function getMessaging() {
   if (messaging) return messaging;
 
+  const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   const serviceAccountPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH ||
     process.env.GOOGLE_APPLICATION_CREDENTIALS;
-  if (!serviceAccountPath) {
+  if (!serviceAccountPath && !serviceAccountJson) {
     if (!missingCredentialsWarningLogged) {
       console.warn('[FCM] Push is disabled. Configure FIREBASE_SERVICE_ACCOUNT_PATH in backend/.env.');
       missingCredentialsWarningLogged = true;
@@ -18,7 +19,9 @@ function getMessaging() {
     return null;
   }
 
-  const serviceAccount = require(path.resolve(process.cwd(), serviceAccountPath));
+  const serviceAccount = serviceAccountJson
+    ? JSON.parse(serviceAccountJson)
+    : require(path.resolve(process.cwd(), serviceAccountPath));
   const app = admin.apps[0] || admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });

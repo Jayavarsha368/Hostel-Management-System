@@ -1,5 +1,6 @@
 package com.example.freelancerconnect.api
 
+import com.example.freelancerconnect.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,17 +10,19 @@ import java.util.concurrent.TimeUnit
 /**
  * Singleton Retrofit client.
  *
- * The phone deployment task forwards port 3000 over ADB, so localhost reaches
- * the backend running on the development machine.
- *
- * The backend must be running on port 3000.
+ * API_BASE_URL is supplied through Gradle for public builds. Debug builds
+ * default to localhost for ADB reverse development.
  */
 object ApiClient {
 
-    private const val BASE_URL = "http://localhost:3000/"
+    private const val BASE_URL = BuildConfig.API_BASE_URL
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
+        level = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor.Level.BODY
+        } else {
+            HttpLoggingInterceptor.Level.NONE
+        }
     }
 
     private val okHttpClient = OkHttpClient.Builder()

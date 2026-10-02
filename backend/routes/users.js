@@ -6,7 +6,8 @@ const path = require('path');
 const crypto = require('crypto');
 
 const router = express.Router();
-const profileFilesDirectory = path.join(__dirname, '..', 'uploads', 'profiles');
+const profileFilesDirectory = process.env.PROFILE_FILES_DIR ||
+  path.join(__dirname, '..', 'uploads', 'profiles');
 const profileFileFields = { resume: 'resumeUrl', portfolio: 'portfolioUrl' };
 const allowedFileExtensions = new Set(['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png']);
 

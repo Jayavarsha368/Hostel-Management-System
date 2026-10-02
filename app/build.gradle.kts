@@ -7,6 +7,10 @@ plugins {
 val googleWebClientId = providers.gradleProperty("GOOGLE_WEB_CLIENT_ID")
     .orElse(providers.environmentVariable("GOOGLE_WEB_CLIENT_ID"))
     .getOrElse("")
+val apiBaseUrl = providers.gradleProperty("API_BASE_URL")
+    .orElse(providers.environmentVariable("API_BASE_URL"))
+    .getOrElse("http://localhost:3000/")
+    .let { if (it.endsWith("/")) it else "$it/" }
 
 android {
     namespace = "com.example.freelancerconnect"
@@ -23,6 +27,7 @@ android {
             "GOOGLE_WEB_CLIENT_ID",
             "\"$googleWebClientId\""
         )
+        buildConfigField("String", "API_BASE_URL", "\"$apiBaseUrl\"")
     }
 
     buildFeatures {

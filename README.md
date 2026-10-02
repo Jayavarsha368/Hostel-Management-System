@@ -81,6 +81,20 @@ Android Studio is not required. Install/configure a Java 17 JDK (`JAVA_HOME`) an
 
 The Gradle tasks require Java 17 available to VS Code through a valid `JAVA_HOME`.
 
+### 6. Deploy for public use
+USB forwarding and local MongoDB are development-only. For public use, deploy the API and database separately:
+
+1. Create a MongoDB Atlas cluster and database user. Add the Render service's outbound IPs to Atlas Network Access, or use a temporary broad IP rule only during setup. Copy the Atlas connection string for `MONGO_URI`.
+2. In Render, create a Blueprint from this repository using `render.yaml`. The blueprint creates the public Node API and a persistent disk for uploaded resumes and portfolios. The configured Starter web service and disk are paid Render resources.
+3. Set the generated API's `MONGO_URI`. Configure `GOOGLE_WEB_CLIENT_ID` if Google Sign-In is enabled. For push notifications, set `FIREBASE_SERVICE_ACCOUNT_JSON` to the Firebase service-account JSON contents. Set secrets only in the hosting dashboard, never in Git.
+4. Wait for Render's `/health` check to pass, then build the Android release against the HTTPS URL:
+
+```powershell
+.\gradlew.bat assembleRelease -PAPI_BASE_URL=https://YOUR-API.onrender.com/
+```
+
+For Google Sign-In, also pass `-PGOOGLE_WEB_CLIENT_ID=YOUR_WEB_CLIENT_ID` and set the same ID in Render. The APK is at `app/build/outputs/apk/release/app-release.apk`. Direct distribution requires each user to allow APK installation; Google Play distribution additionally requires a signing key and Play Console setup. Release builds do not log HTTP bodies.
+
 ---
 
 ## Project Structure
