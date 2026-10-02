@@ -2,22 +2,16 @@ services:
   - type: web
     name: freelancerconnect-api
     runtime: node
-    plan: starter
+    plan: free
     rootDir: backend
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
-    disk:
-      name: freelancerconnect-profile-files
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
       - key: HOST
         value: 0.0.0.0
-      - key: PROFILE_FILES_DIR
-        value: /var/data/profile-files
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET

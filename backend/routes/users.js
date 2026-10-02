@@ -3,13 +3,18 @@ const User     = require('../models/User');
 const { protect } = require('../middleware/auth');
 const fs = require('fs/promises');
 const path = require('path');
-const crypto = require('crypto');
+const mongoose = require('mongoose');
 
 const router = express.Router();
 const profileFilesDirectory = process.env.PROFILE_FILES_DIR ||
   path.join(__dirname, '..', 'uploads', 'profiles');
 const profileFileFields = { resume: 'resumeUrl', portfolio: 'portfolioUrl' };
 const allowedFileExtensions = new Set(['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png']);
+const profileFilesBucketName = 'profileFiles';
+
+function getProfileFilesBucket() {
+  return new mongoose.mongo.GridFSBucket(User.db.db, { bucketName: profileFilesBucketName });
+}
 
 // All user routes require authentication
 router.use(protect);
@@ -80,16 +85,35 @@ router.put('/me/files/:kind', express.raw({ type: 'application/octet-stream', li
     const user = await User.findById(req.user._id).select(field);
     if (!user) return res.status(404).json({ error: 'User not found.' });
 
-    const userDirectory = path.join(profileFilesDirectory, req.user._id.toString());
-    const filename = `${crypto.randomUUID()}${extension}`;
-    await fs.mkdir(userDirectory, { recursive: true });
-    await fs.writeFile(path.join(userDirectory, filename), req.body, { flag: 'wx' });
-    const previousFilename = user[field];
-    user[field] = filename;
-    await user.save();
+    const bucket = getProfileFilesBucket();
+    const fileId = new mongoose.mongo.ObjectId();
+    const filename = `${req.params.kind}${extension}`;
+    const upload = bucket.openUploadStreamWithId(fileId, filename, {
+      metadata: {
+        userId: req.user._id.toString(),
+        kind: req.params.kind,
+        extension,
+      },
+    });
+    await new Promise((resolve, reject) => {
+      upload.once('error', reject);
+      upload.once('finish', resolve);
+      upload.end(req.body);
+    });
 
-    if (previousFilename && path.basename(previousFilename) === previousFilename) {
-      await fs.unlink(path.join(userDirectory, previousFilename)).catch(() => {});
+    const previousFilename = user[field];
+    user[field] = fileId.toHexString();
+    try {
+      await user.save();
+    } catch (err) {
+      await bucket.delete(fileId).catch(() => {});
+      throw err;
+    }
+
+    if (mongoose.mongo.ObjectId.isValid(previousFilename)) {
+      await bucket.delete(new mongoose.mongo.ObjectId(previousFilename)).catch(() => {});
+    } else if (previousFilename && path.basename(previousFilename) === previousFilename) {
+      await fs.unlink(path.join(profileFilesDirectory, req.user._id.toString(), previousFilename)).catch(() => {});
     }
 
     res.json({ message: 'Profile file uploaded.' });
@@ -112,20 +136,43 @@ router.get('/:id/files/:kind', async (req, res) => {
       return res.status(403).json({ error: 'You are not allowed to view this profile file.' });
     }
 
-    const filename = user[field];
-    if (!filename || path.basename(filename) !== filename) {
+    const fileIdValue = user[field];
+    if (!fileIdValue) {
       return res.status(404).json({ error: 'This file is unavailable. Ask the freelancer to upload it again.' });
     }
 
-    const filePath = path.join(profileFilesDirectory, user._id.toString(), filename);
+    if (mongoose.mongo.ObjectId.isValid(fileIdValue) && fileIdValue.length === 24) {
+      const fileId = new mongoose.mongo.ObjectId(fileIdValue);
+      const file = await User.db.db.collection(`${profileFilesBucketName}.files`).findOne({
+        _id: fileId,
+        'metadata.userId': user._id.toString(),
+        'metadata.kind': req.params.kind,
+      });
+      if (!file) return res.status(404).json({ error: 'Profile file not found.' });
+
+      const extension = file.metadata?.extension || path.extname(file.filename);
+      res.type(extension);
+      res.set('Content-Disposition', `inline; filename="${req.params.kind}${extension}"`);
+      const download = getProfileFilesBucket().openDownloadStream(fileId);
+      download.on('error', (err) => {
+        if (!res.headersSent) res.status(404).json({ error: 'Profile file not found.' });
+        else res.destroy(err);
+      });
+      return download.pipe(res);
+    }
+
+    if (path.basename(fileIdValue) !== fileIdValue) {
+      return res.status(404).json({ error: 'Profile file not found.' });
+    }
+    const filePath = path.join(profileFilesDirectory, user._id.toString(), fileIdValue);
     try {
       await fs.access(filePath);
     } catch (_err) {
       return res.status(404).json({ error: 'Profile file not found.' });
     }
 
-    res.type(path.extname(filename));
-    res.set('Content-Disposition', `inline; filename="${req.params.kind}${path.extname(filename)}"`);
+    res.type(path.extname(fileIdValue));
+    res.set('Content-Disposition', `inline; filename="${req.params.kind}${path.extname(fileIdValue)}"`);
     res.sendFile(filePath);
   } catch (err) {
     res.status(500).json({ error: err.message });
