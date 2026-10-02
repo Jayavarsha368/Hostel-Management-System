@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:background="@color/surface"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:text="← Back to jobs"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:paddingVertical="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="JOB DETAILS"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobTitle"
+            android:text="Loading job…"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobMeta"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="ABOUT THE PROJECT"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/muted"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobDescription"
+            android:textSize="15sp"
+            android:textColor="@color/inkSecondary"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="SKILLS"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/muted"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobSkills"
+            android:textSize="14sp"
+            android:textColor="@color/ink"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobDeadline"
+            android:textSize="14sp"
+            android:textColor="@color/inkSecondary"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobClient"
+            android:textSize="14sp"
+            android:textColor="@color/inkSecondary"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/jobClientPhone"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/applyButton"
+            android:text="Apply for this job"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:background="@drawable/bg_pill"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <Button
+            android:id="@+id/messageClientButton"
+            android:text="Message client"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:background="@drawable/bg_action_card"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp" />
+
+        <Button
+            android:id="@+id/deleteJobButton"
+            android:text="Delete job post"
+            android:textAllCaps="false"
+            android:textColor="@color/error"
+            android:background="@drawable/bg_action_card"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>

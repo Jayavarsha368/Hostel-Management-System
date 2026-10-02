@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Freelancer Connect</string>
+
+    <!-- ── Auth ─────────────────────────────────────────────────────── -->
+    <string name="login_label">FC / 01</string>
+    <string name="login_title">Make your next move count.</string>
+    <string name="login_subtitle">A focused place to find great work, build a profile, and connect with people who get it.</string>
+    <string name="login_button">Enter workspace  →</string>
+    <string name="login_new_here">New here?</string>
+    <string name="login_create_account"> Create an account</string>
+    <string name="login_forgot">Forgot?</string>
+
+    <string name="register_label">FC / 02</string>
+    <string name="register_title">Start something good.</string>
+    <string name="register_subtitle">Your next opportunity starts with a simple profile.</string>
+    <string name="register_button">Create account  →</string>
+
+    <string name="reset_label">FC / RESET</string>
+    <string name="reset_title">Reset your password.</string>
+    <string name="reset_subtitle">Enter your email and we will send you a reset link.</string>
+    <string name="reset_button">Send reset link  →</string>
+
+    <!-- ── Role Selection ────────────────────────────────────────────── -->
+    <string name="role_label">FC / 03</string>
+    <string name="role_title">Choose your lane.</string>
+    <string name="role_subtitle">We will tune your workspace around what you want to do next.</string>
+    <string name="role_freelancer">I find the work  →</string>
+    <string name="role_client">I need the talent  →</string>
+
+    <!-- ── Profile ───────────────────────────────────────────────────── -->
+    <string name="profile_label">YOUR SIGNAL</string>
+    <string name="profile_title">Make your work easy to remember.</string>
+    <string name="profile_button">Save profile  →</string>
+    <string name="profile_hint_name">Name or company name</string>
+    <string name="profile_hint_skills">Skills, comma separated</string>
+    <string name="profile_hint_experience">Experience</string>
+    <string name="profile_hint_education">Education</string>
+    <string name="profile_hint_bio">A short bio</string>
+
+    <!-- ── Dashboard ─────────────────────────────────────────────────── -->
+    <string name="dashboard_label">FC / WORKSPACE</string>
+    <string name="dashboard_greeting">Good morning.\nMake it a sharp one.</string>
+    <string name="dashboard_subtitle">Your momentum, in one place.</string>
+    <string name="dashboard_jobs_button">Browse opportunities  →</string>
+    <string name="dashboard_post_button">Post a job</string>
+    <string name="dashboard_chat_button">Messages</string>
+    <string name="dashboard_notifications_button">Notifications</string>
+
+    <!-- ── Post Job ───────────────────────────────────────────────────── -->
+    <string name="post_job_label">NEW OPPORTUNITY</string>
+    <string name="post_job_title">Tell the right people what you need.</string>
+    <string name="post_job_button">Publish opportunity  →</string>
+
+    <!-- ── Error Messages ────────────────────────────────────────────── -->
+    <string name="error_empty_fields">Please fill in all fields</string>
+    <string name="error_session_expired">Session expired. Please log in again.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_login_failed">Login failed. Check your credentials.</string>
+    <string name="error_register_failed">Registration failed. Please try again.</string>
+    <string name="error_post_job_failed">Failed to post job. Please try again.</string>
+    <string name="error_save_profile_failed">Failed to save profile. Please try again.</string>
+    <string name="error_title_description_required">Title and description are required</string>
+
+    <!-- ── Success Messages ──────────────────────────────────────────── -->
+    <string name="success_reset_sent">Password reset email sent. Check your inbox.</string>
+    <string name="success_profile_saved">Profile saved successfully.</string>
+
+</resources>

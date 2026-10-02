@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/surface"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Logo / Brand -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="●"
+                android:textSize="20sp"
+                android:textColor="@color/teal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="  FreelancerConnect"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/inkSecondary"
+                android:letterSpacing="0.04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/bg_brand_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="132dp">
+
+            <TextView
+                android:text="✦"
+                android:textSize="40sp"
+                android:textColor="@color/paper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Connect  •  Hire  •  Grow"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/paper"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Headline -->
+        <TextView
+            android:text="Welcome back."
+            android:textSize="36sp"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Sign in to your workspace and pick up where you left off."
+            android:textSize="15sp"
+            android:textColor="@color/inkSecondary"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Email label -->
+        <TextView
+            android:text="Email address"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/email"
+            android:hint="you@example.com"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Password label -->
+        <TextView
+            android:text="Password"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/password"
+            android:hint="••••••••"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:text="Continue with email  →"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/bg_pill"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
+        <Button
+            android:id="@+id/googleSignInButton"
+            android:text="G   Continue with Google"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:background="@drawable/bg_action_card"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Links Row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="New here?"
+                android:textSize="14sp"
+                android:textColor="@color/inkSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/registerLink"
+                android:text="  Create account"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal"
+                android:paddingVertical="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/forgotLink"
+                android:text="Forgot password?"
+                android:textSize="14sp"
+                android:textColor="@color/muted"
+                android:paddingVertical="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

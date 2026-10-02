@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/surface"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back button -->
+        <TextView
+            android:id="@+id/backButton"
+            android:text="← Back to login"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:paddingVertical="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Lock icon area -->
+        <TextView
+            android:text="🔐"
+            android:textSize="40sp"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Reset your password."
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Enter the email address associated with your account and we'll send you a reset link."
+            android:textSize="15sp"
+            android:textColor="@color/inkSecondary"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Email address"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/email"
+            android:hint="you@example.com"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:text="Send reset link  →"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/bg_pill"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
+    </LinearLayout>
+</ScrollView>

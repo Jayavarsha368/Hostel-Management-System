@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/surface"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingTop="56dp"
+        android:paddingBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back button -->
+        <TextView
+            android:id="@+id/backButton"
+            android:text="← Back"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:paddingVertical="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="YOUR SIGNAL"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Build your profile."
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="The more complete your profile, the more likely you are to be discovered."
+            android:textSize="15sp"
+            android:textColor="@color/inkSecondary"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/bg_card"
+            android:elevation="3dp"
+            android:layout_marginBottom="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="JC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/paper"
+                    android:gravity="center"
+                    android:background="@drawable/bg_avatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Freelancer profile"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/ink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="★★★★★  4.9  ·  Verified developer"
+                        android:textSize="13sp"
+                        android:textColor="@color/accentOrange"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:text="SKILLS"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/muted"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Java     Android     Firebase     UI Design"
+                android:textSize="13sp"
+                android:textColor="@color/primaryBlue"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="PORTFOLIO"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/muted"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="72dp">
+
+                <TextView
+                    android:text="App design"
+                    android:textSize="12sp"
+                    android:textColor="@color/secondaryPurple"
+                    android:gravity="center"
+                    android:background="@drawable/bg_action_card"
+                    android:layout_marginEnd="6dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:text="Certificate"
+                    android:textSize="12sp"
+                    android:textColor="@color/primaryBlue"
+                    android:gravity="center"
+                    android:background="@drawable/bg_action_card"
+                    android:layout_marginStart="6dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <TextView
+                android:text="★  Top Freelancer     ↯  Quick Responder"
+                android:textSize="12sp"
+                android:textColor="@color/secondaryPurple"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Name -->
+        <TextView
+            android:text="Full name"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/name"
+            android:hint="Your full name"
+            android:inputType="textPersonName"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <TextView
+            android:text="Contact details"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/contactInformation"
+            android:hint="Phone number or preferred contact"
+            android:inputType="text"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <TextView
+            android:text="Phone number"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:hint="Your phone number"
+            android:inputType="phone"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Skills -->
+        <TextView
+            android:text="Skills"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/skills"
+            android:hint="e.g. Android, Kotlin, UI/UX"
+            android:inputType="text"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <TextView
+            android:text="Separate skills with commas"
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Experience -->
+        <TextView
+            android:text="Experience"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/experience"
+            android:hint="e.g. 3 years Android development"
+            android:inputType="text"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Education -->
+        <TextView
+            android:text="Education"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/education"
+            android:hint="e.g. B.Sc. Computer Science"
+            android:inputType="text"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Bio -->
+        <TextView
+            android:text="Short bio"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/bio"
+            android:hint="Tell clients and employers a little about yourself…"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:gravity="top|start"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:paddingTop="14dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
+
+        <TextView
+            android:text="Documents"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/uploadResume"
+            android:text="Upload resume"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:background="@drawable/bg_pill"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/resumeFileName"
+            android:text="No file selected"
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/uploadPortfolio"
+            android:text="Upload portfolio"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:background="@drawable/bg_pill"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/portfolioFileName"
+            android:text="No file selected"
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="GitHub"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/githubUrl"
+            android:hint="https://github.com/your-profile"
+            android:inputType="textUri"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <TextView
+            android:text="LinkedIn"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/inkSecondary"
+            android:letterSpacing="0.06"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/linkedinUrl"
+            android:hint="https://linkedin.com/in/your-profile"
+            android:inputType="textUri"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveProfile"
+            android:text="Save profile  →"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/bg_pill"
+            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
+        <!-- Skip for now -->
+        <TextView
+            android:id="@+id/skipButton"
+            android:text="Skip for now"
+            android:textSize="14sp"
+            android:textColor="@color/muted"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

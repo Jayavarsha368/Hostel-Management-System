@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/surface"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="56dp"
+        android:paddingBottom="104dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="●"
+                    android:textSize="16sp"
+                    android:textColor="@color/accentOrange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/appBrand"
+                    android:text="  FreelancerConnect"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/inkSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/profileButton"
+                android:text="Profile"
+                android:textSize="13sp"
+                android:textColor="@color/teal"
+                android:textStyle="bold"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/bg_chip"
+                android:layout_marginEnd="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/logoutButton"
+                android:text="Log out"
+                android:textSize="13sp"
+                android:textColor="@color/muted"
+                android:paddingVertical="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Greeting -->
+        <TextView
+            android:id="@+id/greetingText"
+            android:text="Welcome."
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/roleChip"
+            android:text="Freelancer"
+            android:textSize="12sp"
+            android:textColor="@color/teal"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="6dp"
+            android:background="@drawable/bg_chip"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/dashboardSubtitle"
+            android:text="What would you like to do today?"
+            android:textSize="15sp"
+            android:textColor="@color/inkSecondary"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Profile Progress Card -->
+        <LinearLayout
+            android:id="@+id/profileProgressCard"
+            android:orientation="vertical"
+            android:padding="22dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="PROFILE COMPLETION"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal"
+                android:letterSpacing="0.12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/profileCardTitle"
+                android:text="Complete your profile to get discovered"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/profileCardSubtitle"
+                android:text="Add skills, experience and a bio to stand out."
+                android:textSize="14sp"
+                android:textColor="@color/inkSecondary"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/profileActionButton"
+                android:text="Edit profile  →"
+                android:textAllCaps="false"
+                android:textColor="@color/navy"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:background="@drawable/bg_pill"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/skillMatchCard"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/bg_card"
+            android:elevation="3dp"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="✦  SKILL MATCH"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/secondaryPurple"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/skillMatchValue"
+                    android:text="Add skills"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/skillMatchSubtitle"
+                android:text="Your profile match is calculated on-device from your listed skills."
+                android:textSize="13sp"
+                android:textColor="@color/inkSecondary"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/skillMatchProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/accentOrange"
+                android:progressBackgroundTint="@color/line"
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+        </LinearLayout>
+
+        <!-- Section Label -->
+        <TextView
+            android:id="@+id/quickActionsLabel"
+            android:text="QUICK ACTIONS"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/muted"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/jobsButton"
+                android:text="⌕\nFind Jobs"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_action_card"
+                android:elevation="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="112dp" />
+
+            <Button
+                android:id="@+id/postJobButton"
+                android:text="＋\nPost a Job"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_brand_gradient"
+                android:elevation="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="112dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/chatButton"
+                android:text="◉\nMessages"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_action_card"
+                android:elevation="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="112dp" />
+
+            <Button
+                android:id="@+id/editProfileButton"
+                android:text="◌\nProfile"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_action_card"
+                android:elevation="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="112dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/achievementsLabel"
+            android:text="YOUR ACHIEVEMENTS"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/muted"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/achievementsText"
+            android:text="★  Top Freelancer     ↯  Quick Responder     ✓  Verified Developer"
+            android:textSize="13sp"
+            android:textColor="@color/secondaryPurple"
+            android:padding="14dp"
+            android:background="@drawable/bg_action_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/projectProgressLabel"
+            android:text="PROJECT PROGRESS"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/muted"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/projectProgressCard"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:background="@drawable/bg_card"
+            android:elevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Mobile app redesign"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Frontend                                      80%"
+                android:textSize="13sp"
+                android:textColor="@color/inkSecondary"
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="80"
+                android:progressTint="@color/accentOrange"
+                android:progressBackgroundTint="@color/line"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <TextView
+                android:text="Backend                                         60%"
+                android:textSize="13sp"
+                android:textColor="@color/inkSecondary"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="60"
+                android:progressTint="@color/accentOrange"
+                android:progressBackgroundTint="@color/line"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+        </LinearLayout>
+
+        <!-- Notifications Button -->
+        <Button
+            android:id="@+id/notificationsButton"
+            android:text="Notifications"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="15sp"
+            android:background="@drawable/bg_input"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Applied Jobs Button -->
+        <Button
+            android:id="@+id/appliedJobsButton"
+            android:text="My Applications"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="15sp"
+            android:background="@drawable/bg_input"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/surfaceCard"
+        android:elevation="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <TextView
+            android:id="@+id/homeNav"
+            android:text="⌂\nHome"
+            android:textSize="11sp"
+            android:textColor="@color/primaryBlue"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/jobsNav"
+            android:text="⌕\nJobs"
+            android:textSize="11sp"
+            android:textColor="@color/inkSecondary"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/chatNav"
+            android:text="◉\nChat"
+            android:textSize="11sp"
+            android:textColor="@color/inkSecondary"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/profileNav"
+            android:text="◌\nProfile"
+            android:textSize="11sp"
+            android:textColor="@color/inkSecondary"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FreelancerConnect" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:colorBackground">@color/surface</item>
+        <item name="android:textColorPrimary">@color/ink</item>
+        <item name="android:textColorSecondary">@color/inkSecondary</item>
+        <item name="android:colorAccent">@color/accentOrange</item>
+        <item name="colorPrimary">@color/primaryBlue</item>
+        <item name="colorPrimaryDark">@color/tealDark</item>
+        <item name="colorOnPrimary">@color/paper</item>
+        <item name="materialButtonStyle">@style/Widget.FreelancerConnect.Button</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:editTextColor">@color/ink</item>
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="editTextColor">@color/ink</item>
+        <item name="colorControlNormal">@color/inputBorder</item>
+        <item name="colorControlActivated">@color/accentOrange</item>
+    </style>
+
+    <style name="Widget.FreelancerConnect.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+
+    <!-- Input field text style -->
+    <style name="InputEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="android:background">@drawable/bg_input</item>
+    </style>
+</resources>

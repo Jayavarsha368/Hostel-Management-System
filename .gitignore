@@ -1,0 +1,13 @@
+/backend/uploads/profiles/
+/backend/.env
+/backend/node_modules/
+/backend/uploads/
+/local.properties
+/.gradle/
+/.kotlin/
+/.idea/
+/build/
+**/build/
+**/.gradle/
+*.iml
+*.log

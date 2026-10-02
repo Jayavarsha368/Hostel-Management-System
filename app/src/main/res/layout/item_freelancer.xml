@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <TextView
+        android:id="@+id/freelancerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ink"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/freelancerExperience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/inkSecondary"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/freelancerSkills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/tealDark"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/freelancerBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/inkSecondary"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/freelancerEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/ink"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/freelancerContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/inkSecondary"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/viewFreelancerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_action_card"
+        android:text="View profile and documents"
+        android:textAllCaps="false"
+        android:textColor="@color/ink"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/messageFreelancer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="Message"
+            android:textAllCaps="false"
+            android:textColor="@color/navy"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/emailFreelancer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_action_card"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="Email"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/callFreelancer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_action_card"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="Call"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

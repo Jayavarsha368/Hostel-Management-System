@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primaryBlue">#111111</color>
+    <color name="secondaryPurple">#6038B4</color>
+    <color name="accentOrange">#F5A000</color>
+    <color name="navy">#FFFFFF</color>
+    <color name="teal">#985100</color>
+    <color name="tealDark">#743D00</color>
+    <color name="accent">#F5A000</color>
+    <color name="accentLight">#FFF0CC</color>
+
+    <!-- Surface & Background -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surfaceCard">#FFFFFF</color>
+    <color name="surfaceElevated">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="ink">#111111</color>
+    <color name="inkSecondary">#454545</color>
+    <color name="muted">#777777</color>
+    <color name="paper">#FFFFFF</color>
+
+    <!-- Input & Borders -->
+    <color name="line">#E5E5E5</color>
+    <color name="inputBg">#FFFFFF</color>
+    <color name="inputBorder">#D0D0D0</color>
+    <color name="inputText">#111111</color>
+    <color name="hint">#858585</color>
+
+    <!-- Status Colors -->
+    <color name="success">#16824B</color>
+    <color name="error">#C83232</color>
+    <color name="warning">#985100</color>
+
+    <!-- Chip / Tag -->
+    <color name="chipBg">#FFF0CC</color>
+    <color name="chipText">#111111</color>
+</resources>

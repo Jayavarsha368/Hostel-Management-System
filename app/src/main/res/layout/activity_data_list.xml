@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="16dp"
+    android:background="@color/surface"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/backButton"
+        android:text="← Back"
+        android:textSize="14sp"
+        android:textColor="@color/teal"
+        android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/sectionLabel"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/screenTitle"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/ink"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/screenSubtitle"
+        android:textSize="14sp"
+        android:textColor="@color/inkSecondary"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/headerAction"
+        android:textAllCaps="false"
+        android:textColor="@color/teal"
+        android:visibility="gone"
+        android:background="@drawable/bg_action_card"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp" />
+
+    <ProgressBar
+        android:id="@+id/listProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="4dp" />
+
+    <TextView
+        android:id="@+id/emptyMessage"
+        android:textSize="15sp"
+        android:textColor="@color/inkSecondary"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dataList"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

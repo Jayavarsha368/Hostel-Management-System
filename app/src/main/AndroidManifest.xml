@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:theme="@style/Theme.FreelancerConnect"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/profile_file_paths" />
+        </provider>
+
+        <service
+            android:name=".notifications.MessageFirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- ── Entry Point ────────────────────────────────────────────── -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ── Auth Flow ─────────────────────────────────────────────── -->
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.ForgotPasswordActivity" />
+        <activity android:name=".activities.RoleSelectionActivity" />
+
+        <!-- ── Onboarding ─────────────────────────────────────────────── -->
+        <activity android:name=".activities.ProfileActivity" />
+
+        <!-- ── Core ──────────────────────────────────────────────────── -->
+        <activity android:name=".activities.DashboardActivity" />
+        <activity android:name=".activities.FreelancerDirectoryActivity" />
+
+        <!-- ── Jobs ──────────────────────────────────────────────────── -->
+        <activity android:name=".activities.PostJobActivity" />
+        <activity android:name=".activities.JobListActivity" />
+        <activity android:name=".activities.JobDetailsActivity" />
+        <activity android:name=".activities.ApplyJobActivity" />
+        <activity android:name=".activities.AppliedJobsActivity" />
+        <activity android:name=".activities.ApplicantListActivity" />
+
+        <!-- ── Messaging ─────────────────────────────────────────────── -->
+        <activity android:name=".activities.ChatListActivity" />
+        <activity android:name=".activities.ChatActivity" />
+
+        <!-- ── Projects & Reviews ─────────────────────────────────────── -->
+        <activity android:name=".activities.ProjectTrackingActivity" />
+        <activity android:name=".activities.ReviewActivity" />
+
+        <!-- ── Notifications ──────────────────────────────────────────── -->
+        <activity android:name=".activities.NotificationActivity" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,64 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Start API",
+      "type": "process",
+      "command": "${env:ProgramFiles}\\nodejs\\npm.cmd",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}\\backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Check connected phone",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}\\Android\\Sdk\\platform-tools\\adb.exe",
+      "args": ["devices"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Build debug APK",
+      "type": "process",
+      "command": "${workspaceFolder}\\gradlew.bat",
+      "args": ["assembleDebug"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Install on phone",
+      "type": "process",
+      "command": "${workspaceFolder}\\gradlew.bat",
+      "args": ["installDebug"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Forward backend port",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}\\Android\\Sdk\\platform-tools\\adb.exe",
+      "args": ["reverse", "tcp:3000", "tcp:3000"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Launch on phone",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}\\Android\\Sdk\\platform-tools\\adb.exe",
+      "args": ["shell", "monkey", "-p", "com.example.freelancerconnect", "1"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Deploy to phone",
+      "dependsOn": [
+        "Android: Install on phone",
+        "Android: Forward backend port",
+        "Android: Launch on phone"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ]
+}
